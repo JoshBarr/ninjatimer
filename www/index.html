@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<title>Timer</title>
+	<link rel="stylesheet" type="text/css" href="screen.css">
+</head>
+<body>
+<div class='config padding' data-config>
+<h2>NinjaTimer™</h2>
+	<p>
+		<strong>Enter/Go</strong> - Start the timer/restart the timer
+	</p>
+	<p>
+		<strong>Esc</strong> - Stop the timer
+	</p>
+	<p>
+		<strong>Space</strong> - Pause the timer
+	</p>
+<p class='border-top'>
+	Hours:
+	<input type="number" placeholder="0" data-hours min="0" max="60">
+	
+	Minutes:
+	<input type="number"  placeholder="0" data-minutes min="0" max="60">
+	
+	Seconds:
+	<input type="number"  placeholder="0" data-seconds min="0" max="60">
+</p>
+<p class='border-top'>
+	Background color:
+	<input type="color" data-color-bg value="#000000">
+	Text color:
+	<input type="color" data-color-text value="#ffffff">
+
+	Time up text colour:
+	<input type="color" data-color-end value="#ff0000">
+</p>
+	<p class='border-top'>
+		Time up message:
+		<input type="text" maxlength="100" value="Time's up!" data-times-up>
+		
+	</p>
+	
+	<p class='border-top'>
+		<button data-fs class='btn btn--large hmm'>
+		Fullscreen
+		</button>
+		<button data-go class='btn btn--large'>
+		Start
+		</button>
+	</p>
+	
+</div>
+<div class='fullscreen hidden' data-fullscreen>
+	<div class="time" data-time>
+		00:00:00
+	</div>
+</div>
+<script type="text/javascript" src="site.js"></script>
+</body>
+</html>
