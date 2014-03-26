@@ -11,12 +11,25 @@ body {
 
 input {
 	border: 0;
-	padding: .5em;
+	padding: .35em .5em;
 	line-height: 1;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	border-radius: 2px;
 	margin-left: .5em;
 	margin-right: .5em;
+	font-family: sans-serif;
+}
+
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+	background: #222;
+}
+
+input[type='range'] {
+	margin: 0 0 0 1em;
+	padding: 0;
 }
 
 
@@ -46,7 +59,7 @@ input {
 
 .border-top {
 	border-top: solid 1px #333;
-	padding-top: 1em;
+	/*padding-top: 1em;*/
 }
 
 .padding {
@@ -98,3 +111,36 @@ input {
 .stop {
 	color: red;
 }
+
+
+.label {
+	display: inline-block;
+	background: #33978B;
+	color: #fff;
+	padding: .25em .5em;
+	border-radius: .125em;
+}
+
+
+
+.field {
+	display: inline-block;
+	min-height: 2em;
+	padding: 1em;
+}
+
+
+
+	.field + .field {
+		border-left: 1px solid #333;
+		padding-left: 1em;
+	}
+
+	.actions {
+		padding-top: 2em;
+		margin-top: 0;
+	}
+
+	.ml {
+		margin-left: 2em;
+	}

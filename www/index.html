@@ -9,40 +9,75 @@
 <div class='config padding' data-config>
 <h2>NinjaTimer™</h2>
 	<p>
-		<strong>Enter/Start</strong> - Start the timer/restart the timer
-	</p>
-	<p>
-		<strong>Esc</strong> - Stop the timer
-	</p>
-	<p>
-		<strong>Space</strong> - Pause the timer
-	</p>
-<p class='border-top'>
-	Hours:
-	<input type="number" placeholder="0" data-hours min="0" max="60">
+		<strong class='label'>Enter/Start</strong> - Start the timer/restart the timer
 	
-	Minutes:
-	<input type="number"  placeholder="0" data-minutes min="0" max="60">
+		<strong class='label ml'>Esc</strong> - Stop the timer
+
+		<strong class='label ml'>Space</strong> - Pause the timer
+	</p>
 	
-	Seconds:
-	<input type="number"  placeholder="0" data-seconds min="0" max="60">
-</p>
-<p class='border-top'>
+<fieldset class='border-top'>
+	<span class="field">
+		
+		Hours:
+		<input type="number" placeholder="0" data-hours min="0" max="60">
+	</span>
+
+	<span class="field">
+		Minutes:
+		<input type="number"  placeholder="0" data-minutes min="0" max="60">
+	</span>
+
+	<span class="field">
+		Seconds:
+		<input type="number"  placeholder="0" data-seconds min="0" max="60">
+	</span>
+</fieldset>
+<fieldset class='border-top'>
+
+	<span class="field">
 	Background color:
 	<input type="color" data-color-bg value="#000000">
+	</span>
+
+	<span class="field">
 	Text color:
 	<input type="color" data-color-text value="#ffffff">
+	</span>
 
+
+	<span class="field">
 	Time up text colour:
 	<input type="color" data-color-end value="#ff0000">
-</p>
-	<p class='border-top'>
+	</span>
+
+</fieldset>
+<fieldset class='border-top'>
+	<span class="field">
+		Beep at start?
+		<input type='checkbox' value='1' checked='checked' data-beep-start>
+	</span>
+	
+	<span class="field">
+		Beep at end?
+		<input type='checkbox' value='0' data-beep-end>
+	</span>
+	
+	<span class="field">
+		Volume
+		<input type="range" name="points" min="0" max="1" step="0.1" value="0.5" data-volume>
+	</span>
+</fieldset>
+<fieldset class='border-top'>
+	<span class="field">
+
 		Time up message:
 		<input type="text" maxlength="100" value="Time's up!" data-times-up>
-		
-	</p>
+	</span>
+
+</fieldset>
 	
-	<p class='border-top'>
+	<p class='border-top actions'>
 		<button data-fs class='btn btn--large hmm'>
 		Fullscreen
 		</button>
