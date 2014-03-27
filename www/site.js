@@ -72,6 +72,7 @@ var App = (function(){
     var beepStart = document.querySelector("[data-beep-start]");
     var beepEnd = document.querySelector("[data-beep-end]");
     var volume = document.querySelector("[data-volume]");
+    var sound = document.querySelector("[data-sound]");
 
 
 
@@ -85,7 +86,8 @@ var App = (function(){
                 bufferLoader = new BufferLoader(
                 this.context,
                 [
-                  'assets/beep.wav'
+                    'assets/airhorn.wav',
+                    'assets/beep.wav'
                 ],
                 function(bufferList) {
                     self.finishedLoading.call(self, bufferList);
@@ -98,7 +100,16 @@ var App = (function(){
             this.bufferList = bufferList;
         },
         playSound: function(bufferIndex) {
-            var buffer = this.bufferList[bufferIndex];
+            var ix = +(sound.value),
+                index = ix;
+            
+
+            if (typeof(ix) !== "number") {
+                index = bufferIndex;
+            }
+
+
+            var buffer = this.bufferList[index];
             var context = this.context;
             var gainNode = context.createGainNode();
             var source = context.createBufferSource(); 
