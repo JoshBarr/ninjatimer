@@ -51,7 +51,7 @@ var BufferLoader = (function() {
 
 
 var App = (function(){
-    
+
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
 
 
@@ -94,7 +94,7 @@ var App = (function(){
                 }
                 );
 
-            bufferLoader.load();            
+            bufferLoader.load();
         },
         finishedLoading: function(bufferList) {
             this.bufferList = bufferList;
@@ -102,7 +102,7 @@ var App = (function(){
         playSound: function(bufferIndex) {
             var ix = +(sound.value),
                 index = ix;
-            
+
 
             if (typeof(ix) !== "number") {
                 index = bufferIndex;
@@ -111,11 +111,11 @@ var App = (function(){
 
             var buffer = this.bufferList[index];
             var context = this.context;
-            var gainNode = context.createGainNode();
-            var source = context.createBufferSource(); 
-            source.buffer = buffer;                   
+            var gainNode = context.createGain();
+            var source = context.createBufferSource();
+            source.buffer = buffer;
             source.connect(gainNode);
-            gainNode.connect(context.destination);       
+            gainNode.connect(context.destination);
             gainNode.gain.value = volume.value;
             source.start(0);
         }
@@ -143,7 +143,7 @@ var App = (function(){
 
     var Timer = function() {
 
-    };  
+    };
 
     Timer.prototype = {
         step: 100, // ms
@@ -224,7 +224,7 @@ var App = (function(){
             this.audio.init();
 
         },
-        submitForm: function() {            
+        submitForm: function() {
             var startTime = ((+hours.value)*3600000) + ((+minutes.value)*60000) + ((+seconds.value)*1000);
             this.startTime = startTime;
             this.originalTime = this.startTime;
@@ -307,7 +307,7 @@ var App = (function(){
 
     var timer = new Timer();
     document.addEventListener("DOMContentLoaded", timer, false);
-    
+
     if (document.readyState === "complete") {
         timer.init();
     }
